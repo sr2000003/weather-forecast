@@ -1,0 +1,58 @@
+/* Pure page ke liye smooth gradient background */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+}
+
+/* Heading ke liye thodi padding aur style */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input aur Button ke liye rounded style */
+input[type="text"] {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 30px;
+    border: none;
+    background-color: #ff9800;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff7700;
+}
+
+.weather-result {
+    margin: 30px auto;
+    padding: 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    max-width: 300px;
+    border-radius: 15px;
+    background-color: rgba(49, 66, 16, 0.94);
+}
+
+.weather-result h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+

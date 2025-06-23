@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Check Weather</title>
+    <!-- 👇 IMPORTANT: CSS link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>🌤️ Check Weather</h1>
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter city name">
+        <button>Check</button>
+    </form>
+
+    {% if data.temp %}
+        <div class="weather-result">
+            <h3>{{ data.city|title }}</h3>
+            {% set temp = data.temp %}
+            {% if "cloud" in data.desc|lower %}☁️
+            {% elif "sun" in data.desc|lower or "clear" in data.desc|lower %}☀️
+            {% elif temp > 30 %}🥵
+            {% elif temp < 10 %}❄️
+            {% elif "wind" in data.desc|lower %}🌬️
+            {% else %}🌡️
+            {% endif %} {{ data.temp }}°C, {{ data.desc }}
+        </div>
+    {% endif %}
+
+    {% if data.error %}
+        <p style="color: red;"><b>{{ data.error }}</b></p>
+    {% endif %}
+
+</body>
+</html>
